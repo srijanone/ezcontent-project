@@ -1,0 +1,48 @@
+{
+  "name": "srijanaravali/ezcontent-project",
+  "description": "Project creator for EZ Content Profile.",
+  "type": "project",
+  "license": "GPL-2.0-or-later",
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://packages.drupal.org/8"
+    }
+  ],
+  "config": {
+    "sort-packages": true,
+    "process-timeout": 0
+  },
+  "require": {
+    "composer/installers": "^1.2",
+    "cweagans/composer-patches": "^1.6.5",
+    "drupal-composer/drupal-scaffold": "^2.5",
+    "srijanaravali/ezcontent": "8.x-dev",
+    "drush/drush": "~9"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "scripts": {
+    "post-install-cmd": [
+      "DrupalComposer\\DrupalScaffold\\Plugin::scaffold"
+    ],
+    "post-update-cmd": [
+      "DrupalComposer\\DrupalScaffold\\Plugin::scaffold"
+    ],
+    "quick-start": [
+      "composer install",
+      "php web/core/scripts/drupal quick-start ezcontent"
+    ]
+  },
+  "extra": {
+    "installer-paths": {
+      "web/core": ["type:drupal-core"],
+      "web/libraries/{$name}": ["type:drupal-library"],
+      "web/modules/contrib/{$name}": ["type:drupal-module"],
+      "web/profiles/contrib/{$name}": ["type:drupal-profile"],
+      "web/themes/contrib/{$name}": ["type:drupal-theme"]
+    },
+    "enable-patching": true
+  }
+}
+
