@@ -1,6 +1,6 @@
 {
   "name": "srijanaravali/ezcontent-project",
-  "description": "Project creator for EZ Content Profile.",
+  "description": "Project creator for EZ Content Distribution.",
   "type": "project",
   "license": "GPL-2.0-or-later",
   "repositories": [
@@ -31,18 +31,17 @@
     ],
     "quick-start": [
       "composer install",
-      "php web/core/scripts/drupal quick-start ezcontent"
+      "php docroot/core/scripts/drupal quick-start ezcontent"
     ]
   },
   "extra": {
     "installer-paths": {
-      "web/core": ["type:drupal-core"],
-      "web/libraries/{$name}": ["type:drupal-library"],
-      "web/modules/contrib/{$name}": ["type:drupal-module"],
-      "web/profiles/contrib/{$name}": ["type:drupal-profile"],
-      "web/themes/contrib/{$name}": ["type:drupal-theme"]
+      "docroot/core": ["type:drupal-core"],
+      "docroot/libraries/{$name}": ["type:drupal-library"],
+      "docroot/modules/contrib/{$name}": ["type:drupal-module"],
+      "docroot/profiles/contrib/{$name}": ["type:drupal-profile"],
+      "docroot/themes/contrib/{$name}": ["type:drupal-theme"]
     },
     "enable-patching": true
   }
 }
-
