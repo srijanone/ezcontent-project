@@ -1,14 +1,18 @@
 {
   "name": "srijanaravali/ezcontent-project",
   "description": "Project creator for EZ Content Distribution.",
-  "type": "project",
+  "type": "composer-plugin",
   "license": "GPL-2.0-or-later",
-  "repositories": [
-    {
+  "repositories": {
+    "drupal": {
       "type": "composer",
       "url": "https://packages.drupal.org/8"
+    },
+    "assets": {
+      "type": "composer",
+      "url": "https://asset-packagist.org"
     }
-  ],
+  },
   "config": {
     "sort-packages": true,
     "process-timeout": 0
@@ -19,7 +23,8 @@
     "drupal-composer/drupal-scaffold": "^2.5",
     "drush/drush": "~9",
     "oomphinc/composer-installers-extender": "^1.1",
-    "srijanaravali/ezcontent": "8.x-dev"
+    "srijanaravali/ezcontent": "8.x-dev",
+    "zaporylie/composer-drupal-optimizations": "^1.0"
   },
   "minimum-stability": "dev",
   "prefer-stable": true,
@@ -37,12 +42,28 @@
   },
   "extra": {
     "installer-paths": {
-      "docroot/core": ["type:drupal-core"],
-      "docroot/libraries/{$name}": ["type:drupal-library"],
-      "docroot/modules/contrib/{$name}": ["type:drupal-module"],
-      "docroot/profiles/contrib/{$name}": ["type:drupal-profile"],
-      "docroot/themes/contrib/{$name}": ["type:drupal-theme"]
+      "docroot/core": [
+        "type:drupal-core"
+      ],
+      "docroot/libraries/{$name}": [
+        "type:drupal-library",
+        "type:bower-asset",
+        "type:npm-asset"
+      ],
+      "docroot/modules/contrib/{$name}": [
+        "type:drupal-module"
+      ],
+      "docroot/profiles/contrib/{$name}": [
+        "type:drupal-profile"
+      ],
+      "docroot/themes/contrib/{$name}": [
+        "type:drupal-theme"
+      ]
     },
+    "installer-types": [
+      "bower-asset",
+      "npm-asset"
+    ],
     "enable-patching": true
   }
 }
