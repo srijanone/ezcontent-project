@@ -1,5 +1,5 @@
 {
-  "name": "srijanaravali/ezcontent-project",
+  "name": "srijanone/ezcontent-project",
   "description": "Project creator for EZ Content Distribution.",
   "type": "composer-plugin",
   "license": "GPL-2.0-or-later",
@@ -23,7 +23,7 @@
     "drupal-composer/drupal-scaffold": "^2.5",
     "drush/drush": "~9",
     "oomphinc/composer-installers-extender": "^1.1",
-    "srijanaravali/ezcontent": "8.x-dev",
+    "srijanone/ezcontent": "8.x-dev",
     "zaporylie/composer-drupal-optimizations": "^1.0"
   },
   "minimum-stability": "dev",
