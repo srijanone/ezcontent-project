@@ -29,18 +29,30 @@
   "minimum-stability": "dev",
   "prefer-stable": true,
   "scripts": {
-    "post-install-cmd": [
-      "DrupalComposer\\DrupalScaffold\\Plugin::scaffold"
-    ],
-    "post-update-cmd": [
-      "DrupalComposer\\DrupalScaffold\\Plugin::scaffold"
-    ],
     "quick-start": [
       "composer install",
       "php docroot/core/scripts/drupal quick-start ezcontent"
     ]
   },
   "extra": {
+    "composer-exit-on-patch-failure": true,
+    "drupal-scaffold": {
+      "locations": {
+        "web-root": "./docroot"
+      },
+      "file-mapping": {
+        "[web-root]/sites/default/default.services.yml": {
+          "mode": "replace",
+          "path": "docroot/core/assets/scaffold/files/default.services.yml",
+          "overwrite": false
+        },
+        "[web-root]/sites/default/default.settings.php": {
+          "mode": "replace",
+          "path": "docroot/core/assets/scaffold/files/default.settings.php",
+          "overwrite": false
+        }
+      }
+    },
     "installer-paths": {
       "docroot/core": [
         "type:drupal-core"
