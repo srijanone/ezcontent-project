@@ -23,7 +23,7 @@
     "drupal/core-composer-scaffold": "^8.8",
     "drush/drush": "~9",
     "oomphinc/composer-installers-extender": "^1.1",
-    "drupal/ezcontent": "^1.0@beta",
+    "srijanone/ezcontent": "^1.0.0-beta",
     "zaporylie/composer-drupal-optimizations": "^1.0"
   },
   "minimum-stability": "dev",
