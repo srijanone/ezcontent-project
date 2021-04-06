@@ -23,7 +23,7 @@
     "drupal/core-composer-scaffold": "~9.0.0",
     "drupal/core-recommended": "~9.0.0",
     "drush/drush": "^10",
-    "srijanone/ezcontent": "^2.0",
+    "srijanone/ezcontent": "dev-d9-demo",
     "zaporylie/composer-drupal-optimizations": "^1.0"
   },
   "minimum-stability": "dev",
