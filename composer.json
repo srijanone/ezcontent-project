@@ -20,7 +20,7 @@
   "require": {
     "composer/installers": "^1.9",
     "cweagans/composer-patches": "^1.6.5",
-    "drupal/core-composer-scaffold": "^9.0",
+    "drupal/core-composer-scaffold": "9.2.*",
     "drupal/core-recommended": "^9.0",
     "drush/drush": "^10",
     "srijanone/ezcontent": "2.0.x-dev",
