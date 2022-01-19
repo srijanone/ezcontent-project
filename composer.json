@@ -15,13 +15,20 @@
   },
   "config": {
     "sort-packages": true,
-    "process-timeout": 0
+    "process-timeout": 0,
+    "allow-plugins": {
+      "composer/installers": true,
+      "drupal/core-composer-scaffold": true,
+      "cweagans/composer-patches": true,
+      "zaporylie/composer-drupal-optimizations": true,
+      "oomphinc/composer-installers-extender": true
+    }
   },
   "require": {
     "composer/installers": "^1.9",
     "cweagans/composer-patches": "^1.6.5",
     "drupal/core-composer-scaffold": "9.2.*",
-    "drupal/core-recommended": "^9.0",
+    "drupal/core-recommended": "9.2.*",
     "drush/drush": "^10",
     "srijanone/ezcontent": "2.0.x-dev",
     "zaporylie/composer-drupal-optimizations": "^1.0"
@@ -35,7 +42,7 @@
     ]
   },
   "extra": {
-    "composer-exit-on-patch-failure": true,
+    "composer-exit-on-patch-failure": false,
     "drupal-scaffold": {
       "locations": {
         "web-root": "./docroot"
