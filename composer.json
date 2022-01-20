@@ -27,10 +27,10 @@
   "require": {
     "composer/installers": "^1.9",
     "cweagans/composer-patches": "^1.6.5",
-    "drupal/core-composer-scaffold": "9.2.*",
-    "drupal/core-recommended": "9.2.*",
+    "drupal/core-composer-scaffold": "9.3.*",
+    "drupal/core-recommended": "9.3.*",
     "drush/drush": "^10",
-    "srijanone/ezcontent": "2.0.x-dev",
+    "srijanone/ezcontent": "dev-9.3-testpatch",
     "zaporylie/composer-drupal-optimizations": "^1.0"
   },
   "minimum-stability": "dev",
