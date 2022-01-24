@@ -30,7 +30,7 @@
     "drupal/core-composer-scaffold": "9.3.*",
     "drupal/core-recommended": "9.3.*",
     "drush/drush": "^10",
-    "srijanone/ezcontent": "dev-9.3-testpatch",
+    "srijanone/ezcontent": "2.0.x-dev",
     "zaporylie/composer-drupal-optimizations": "^1.0"
   },
   "minimum-stability": "dev",
