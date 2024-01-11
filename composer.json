@@ -41,7 +41,8 @@
     "cweagans/composer-patches": "^1.6.5",
     "drupal/core-composer-scaffold": "^9.5",
     "drupal/core-recommended": "^9.5",
-    "srijanone/ezcontent": "dev-2.2.4-d9-demo",
+    "drupal/ezcontent_demo": "^2.0",
+    "srijanone/ezcontent": "dev-d9-demo",
     "zaporylie/composer-drupal-optimizations": "^1.0"
   },
   "minimum-stability": "dev",
@@ -55,21 +56,24 @@
   "extra": {
     "patches": {
       "drupal/core": {
-        "drupal-9.5.x-subprofile-patch": "https://www.drupal.org/files/issues/2023-03-02/3266057-108-9-5-x.patch",
-        "testimageotem": "https://www.drupal.org/files/issues/2022-07-28/2825812-245.patch"
+        "[subprofile support] 3266057 - Allow profiles to define a base/parent profile and load them in the correct order For Drupal 9.5.x": "https://www.drupal.org/files/issues/2023-03-02/3266057-108-9-5-x.patch",
+        "ImageItem should have an derivatives computed property, to expose all image style URLs For Drupal 9.5.x": "https://www.drupal.org/files/issues/2022-07-28/2825812-245.patch"
       }
     },
     "patches-ignore": {
       "srijanone/ezcontent": {
         "drupal/core": {
           "[subprofile support] 3266057 - Allow profiles to define a base/parent profile and load them in the correct order": "https://www.drupal.org/files/issues/2023-03-03/3266057-109-10-0-x.patch"
+        },
+        "drupal/entity_browser": {
+          "3183414 - Entity browser modal popup does not close on pressing escape key": "https://www.drupal.org/files/issues/2020-11-19/3183414-2.patch"
         }
       },
       "drupal/ezcontent_api": {
         "drupal/core": {
-        "ImageItem should have an derivatives computed property, to expose all image style URLs": "https://www.drupal.org/files/issues/2023-04-10/2825812-248.patch"
+          "ImageItem should have an derivatives computed property, to expose all image style URLs": "https://www.drupal.org/files/issues/2023-04-10/2825812-248.patch"
+        }
       }
-    }
     },
     "composer-exit-on-patch-failure": false,
     "drupal-scaffold": {
