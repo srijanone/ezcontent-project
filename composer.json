@@ -4,6 +4,18 @@
   "type": "composer-plugin",
   "license": "GPL-2.0-or-later",
   "repositories": {
+    "better_normalizers": {
+      "type": "vcs",
+      "url": "https://git.drupalcode.org/issue/better_normalizers-3286221.git"
+    },
+    "jsonapi_explorer": {
+      "type": "vcs",
+      "url": "https://git.drupalcode.org/issue/jsonapi_explorer-3288136"
+    },
+    "yoast_seo": {
+      "type": "vcs",
+      "url": "https://git.drupalcode.org/issue/yoast_seo-3384771"
+    },
     "drupal": {
       "type": "composer",
       "url": "https://packages.drupal.org/8"
@@ -15,15 +27,21 @@
   },
   "config": {
     "sort-packages": true,
-    "process-timeout": 0
+    "process-timeout": 0,
+    "allow-plugins": {
+      "composer/installers": true,
+      "drupal/core-composer-scaffold": true,
+      "cweagans/composer-patches": true,
+      "zaporylie/composer-drupal-optimizations": true,
+      "oomphinc/composer-installers-extender": true
+    }
   },
   "require": {
     "composer/installers": "^1.9",
     "cweagans/composer-patches": "^1.6.5",
-    "drupal/core-composer-scaffold": "~9.0.0",
-    "drupal/core-recommended": "~9.0.0",
-    "drush/drush": "^10",
-    "srijanone/ezcontent": "dev-d9-demo",
+    "drupal/core-composer-scaffold": "^9.5",
+    "drupal/core-recommended": "^9.5",
+    "srijanone/ezcontent": "dev-2.2.4-d9-demo",
     "zaporylie/composer-drupal-optimizations": "^1.0"
   },
   "minimum-stability": "dev",
@@ -35,7 +53,25 @@
     ]
   },
   "extra": {
-    "composer-exit-on-patch-failure": true,
+    "patches": {
+      "drupal/core": {
+        "drupal-9.5.x-subprofile-patch": "https://www.drupal.org/files/issues/2023-03-02/3266057-108-9-5-x.patch",
+        "testimageotem": "https://www.drupal.org/files/issues/2022-07-28/2825812-245.patch"
+      }
+    },
+    "patches-ignore": {
+      "srijanone/ezcontent": {
+        "drupal/core": {
+          "[subprofile support] 3266057 - Allow profiles to define a base/parent profile and load them in the correct order": "https://www.drupal.org/files/issues/2023-03-03/3266057-109-10-0-x.patch"
+        }
+      },
+      "drupal/ezcontent_api": {
+        "drupal/core": {
+        "ImageItem should have an derivatives computed property, to expose all image style URLs": "https://www.drupal.org/files/issues/2023-04-10/2825812-248.patch"
+      }
+    }
+    },
+    "composer-exit-on-patch-failure": false,
     "drupal-scaffold": {
       "locations": {
         "web-root": "./docroot"
